@@ -17,8 +17,28 @@ console.log(invertirArray([1,2,3,4]));
 /* Crear una función que recibe un array de 4 elementos con números enteros y devuelve uno que 
 contenga sólo los números pares, si los hubiera. Ej [1,2,3,4] retorna [2,4]  */ 
 
+function numerosPares(array) {
+    let pares = [];
+    let numero = array.pop();
+    if (numero % 2 === 0){
+        pares.push(numero);
+    };
+    numero = array.pop();
+    if (numero % 2 === 0){
+        pares.push(numero);
+    };
+    numero = array.pop();
+    if (numero % 2 === 0){
+        pares.push(numero);
+    };
+    numero = array.pop();
+    if (numero % 2 === 0){
+        pares.push(numero);
+    };
+    return pares;
+};
 
-
+console.log(numerosPares([1,2,3,4]));
 
 /*  Crear una función que recibe 2 parámetros, un texto con un tipo de dato de JS y  un array de 4 elementos; 
 retorna un booleano que indica si todos los elementos son del tipo de dato que se envió por parámetro. 
