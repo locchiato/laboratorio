@@ -58,3 +58,5 @@ console.log("------------------------------");
 console.log(suma([1, 2, 3, 4])); // true
 console.log(suma([1, 2, "hola", 4])); //false
 console.log(suma(["1", "2", "hola", "4"])); //true
+
+// (5)
