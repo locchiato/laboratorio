@@ -45,16 +45,14 @@ retorna un booleano que indica si todos los elementos son del tipo de dato que s
 Ej: tipoArray(“number”, [1,2,3,4]) retorna true; tipoArray(“number”, [1,2,”hola”,,4]) retorna false.    */
 
 function tipoArray(texto, array){
-    if (texto === typeof array[0]){
-        if (texto === typeof array[1]){
-            if (texto === typeof array[2]){
-                if (texto === typeof array[3]){
-                    return true;
-                }
-            }        
-        }
-    }
-    return false;
+    for (i = 0; i < array.length; i++) {
+        if (texto === typeof array[i]){
+            continue;
+        }else{
+            return false;
+        };
+    };
+    return true;
 };
 
 console.log("------------------------------");
@@ -74,11 +72,15 @@ de todos sus números. Usar la función tipoArray para validar que el array es d
 salir de la función antes de acumular con el mensaje "Error: array corrupto" */
 
 function  sumaNumeros (array) {
+    let suma = 0;
     if (tipoArray('number', array) == true){
-        return array[0] + array[1] + array[2] + array [3];
+        for (let i = 0; i < array.length; i++) {
+            suma += array[i];
+        }
+        return suma;
     }else{
         return "Error: array corrupto"
-    }
+    };
 };
 
 console.log("------------------------------");
@@ -92,7 +94,9 @@ Otro ejemplo puede ser el uso de letras y palabras para combinarlas en frase irr
 
 function funcionesIntegradas(array) {
     //console.log(tipoArray('number', array));
-    return tipoArray('number', array) == true ? numerosPares(invertirArray(array)) : "No es un array númerico";
+    return tipoArray('number', array) == true ? 
+    sumaNumeros(numerosPares(invertirArray(array))): 
+    "No es un array númerico";
 
     // sumaNumeros(numerosPares(invertirArray(array)))
 }
