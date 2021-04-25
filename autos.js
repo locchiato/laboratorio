@@ -31,4 +31,14 @@ let auto2 = new Auto(
     "Toyota", "Corolla", 100000, 0, "Blanco", 14, 2019, "JJK116", false
 );
 
-module.exports = [auto1, auto2];
+let auto3 = new Auto(
+    // marca, modelo, precio, km, color, cuotas, anio, patente, vendido.
+    "Ford", "Fiesta", 150000, 200, "Azul", 12, 2019, "APL123", false
+);
+
+let auto4 = new Auto(
+    // marca, modelo, precio, km, color, cuotas, anio, patente, vendido.
+    "Toyota", "Corolla", 100000, 0, "Blanco", 14, 2019, "JJK116", false
+);
+
+module.exports = [auto1, auto2, auto3, auto4];

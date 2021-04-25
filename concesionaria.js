@@ -1,7 +1,7 @@
-let listaDeAutos = require("./autos");
+let autos = require("./autos");
 
 let concesionaria = {
-    autos: listaDeAutos,
+    autos: autos,
     buscarAuto: function(patente) {
         for (let auto of this.autos)
             if (auto.patente === patente)
@@ -33,10 +33,8 @@ let concesionaria = {
         return precios;
     },
     puedeComprar: function(auto, persona) {
-        let cpc = persona.capacidadDePagoEnCuotas;
-        let cpt = persona.capacidadDePagoTotal;
-        return cpt > auto.precio &&
-            cpc > (auto.precio / auto.cuotas);
+        return persona.capacidadDePagoTotal > auto.precio &&
+            persona.capacidadDePagoEnCuotas > (auto.precio / auto.cuotas);
     },
     autosQuePuedeComprar: function(persona) {
         let autos = [];
